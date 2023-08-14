@@ -1,5 +1,7 @@
 /* ---------- All select item start ----------*/
-const meal_Search_keyWord = document.getElementById("meal_Search_keyWord");
+const meal_Search_keyWord_Field_Field = document.getElementById(
+  "meal_Search_keyWord_Field"
+);
 const displayMealResult = document.getElementById("displayMealResult");
 let error_section = document.getElementById("error_section");
 
@@ -7,8 +9,8 @@ let error_section = document.getElementById("error_section");
 function displaySearchMealItems() {
   /* ---------- get all selection value start ----------*/
   displayMealResult.innerHTML = "";
-  meal_search_Value = meal_Search_keyWord.value;
-  meal_Search_keyWord.value = "";
+  meal_search_Value = meal_Search_keyWord_Field.value;
+  meal_Search_keyWord_Field.value = "";
   /* ---------- get all selection value end ----------*/
   /* ---------- create url and update and fetch  start ----------*/
   const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${meal_search_Value}`;
