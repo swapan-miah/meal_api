@@ -1,5 +1,5 @@
 /* ---------- All select item start ----------*/
-const meal_Search_keyWord_Field_Field = document.getElementById(
+const meal_Search_keyWord_Field = document.getElementById(
   "meal_Search_keyWord_Field"
 );
 const displayMealResult = document.getElementById("displayMealResult");
@@ -20,22 +20,25 @@ function displaySearchMealItems() {
 
   /* ---------- create url and update and fetch  end ----------*/
 }
-onload(mealLoadData());
-function mealLoadData() {
-  const mealNullUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
-  fetch(mealNullUrl)
-    .then((res) => res.json())
-    .then((data) => displayMealItem(data.meals));
-  // .then((data) => console.log(data.meals));
-}
+// window.onload = (event) => {
+//   mealLoadData();
+// };
+// function mealLoadData() {
+//   const mealNullUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
+//   fetch(mealNullUrl)
+//     .then((res) => res.json())
+//     .then((data) => displayMealItem(data.meals));
+//   // .then((data) => console.log(data.meals));
+// }
 
 function displayMealItem(foods) {
   console.log(foods);
   // const error_message = document.createElement("div");
   // error_section.appendChild(error_message);
-  if (foods == null) {
+  if (foods === null) {
     error_message.innerText = `The Food ${meal_search_Value} is not Found`;
-    console.log(meal_search_Value);
+    console.log(error_message.innerText);
+    // console.log(meal_search_Value);
     let error_message = document.createElement("div");
     error_message.classList.add("bg-primary");
     error_message.style.height = " 70px";
